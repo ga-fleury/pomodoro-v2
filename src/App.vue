@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <HeaderNav />
     <router-view />
   </div>
 </template>
@@ -17,10 +14,12 @@
   color: #2c3e50;
 }
 
-#nav {
+.nav {
+  text-transform: uppercase;
   padding: 30px;
 
   a {
+    text-decoration: none;
     font-weight: bold;
     color: #2c3e50;
 
@@ -30,3 +29,13 @@
   }
 }
 </style>
+
+<script>
+import HeaderNav from "./components/MainHeader";
+
+export default {
+  components: {
+    HeaderNav
+  }
+};
+</script>
