@@ -33,6 +33,18 @@
 </template>
 
 <script>
+import { Howl, Howler } from "howler";
+
+// Setup the new Howl.
+const sound = new Howl({
+  src: ["alarm.mp3"],
+  sprite: {
+    single: [0, 3000]
+  }
+});
+
+Howler.volume(0.5);
+
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
@@ -116,7 +128,6 @@ export default {
       }
     }
   },
-
   watch: {
     timeLeft(newValue) {
       if (newValue === 0) {
@@ -143,6 +154,7 @@ export default {
 
   methods: {
     pomodoroReset() {
+      sound.play("single");
       this.pomodoroCounter = this.pomodoroTimes;
       this.pomodoroCounter++;
       this.$emit("pomodoroFinished");

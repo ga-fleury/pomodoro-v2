@@ -14,6 +14,7 @@
       @startUpdate="startClicked"
       @resetWasTriggered="resetClockSwitcher"
       :currentRunState="isRunning"
+      @pomodoroReset="pomodoroReset"
     />
   </div>
 </template>

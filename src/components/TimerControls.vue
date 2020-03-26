@@ -33,6 +33,7 @@ export default {
     },
     resetTrigger() {
       this.$emit("resetWasTriggered");
+      this.$emit("pomodoroReset", 0);
       this.isRunning = false;
     }
   }
